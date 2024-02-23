@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://8blwojlm4m7"]
+[gd_scene load_steps=9 format=3 uid="uid://8blwojlm4m7"]
 
 [ext_resource type="Texture2D" uid="uid://q84f72f76ja3" path="res://Assets/textures/dev/grids/Dark/texture_07.png" id="1_fwpnr"]
 [ext_resource type="Texture2D" uid="uid://626p8piimkxh" path="res://Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_ydrsi"]
+[ext_resource type="Script" path="res://Player.gd" id="3_7tryn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wf2f"]
 albedo_texture = ExtResource("1_fwpnr")
@@ -18,6 +19,8 @@ background_mode = 2
 sky = SubResource("Sky_f6ag1")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jki25"]
 
 [node name="World" type="Node3D"]
 
@@ -37,3 +40,15 @@ environment = SubResource("Environment_576er")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("3_7tryn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_jki25")
+
+[node name="Head" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head"]
