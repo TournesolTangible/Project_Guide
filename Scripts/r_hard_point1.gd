@@ -14,5 +14,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("lmb"):
 		
-		transform = $point_position.global_transform
-		print(transform)
+		rotate_x(-deg_to_rad(5))
+		
+	if Input.is_action_pressed("rmb"):
+		rotate_x(deg_to_rad(5))

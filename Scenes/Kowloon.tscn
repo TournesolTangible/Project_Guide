@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcrwgc6qpy87v"]
+[gd_scene load_steps=6 format=3 uid="uid://dcrwgc6qpy87v"]
 
 [ext_resource type="Texture2D" uid="uid://cmkbosp1oxbwu" path="res://Assets/textures/concrete6.png" id="1_wwdh4"]
 [ext_resource type="PackedScene" uid="uid://dpm3jewkmcw35" path="res://player.tscn" id="2_4c1ys"]
+[ext_resource type="Texture2D" uid="uid://bco6p3n6wf67v" path="res://Assets/textures/asphalt.png" id="2_k0jea"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7a6di"]
 albedo_texture = ExtResource("1_wwdh4")
@@ -11,18 +12,90 @@ uv1_world_triplanar = true
 uv2_triplanar = true
 uv2_triplanar_sharpness = 1.1487
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqw3a"]
+albedo_texture = ExtResource("2_k0jea")
+uv1_triplanar = true
+
 [node name="Kowloon" type="Node3D"]
 
 [node name="Stage" type="Node3D" parent="."]
 
 [node name="concrete_floor" type="CSGBox3D" parent="Stage"]
-transform = Transform3D(12.0671, 0, 0, 0, 0.131811, 0, 0, 0, 0.984246, 0, 0.5, 0)
+transform = Transform3D(12.0671, 0, 0, 0, 0.131811, 0, 0, 0, 3.10321, 0, 0.5, 0)
 use_collision = true
 material = SubResource("StandardMaterial3D_7a6di")
+metadata/_edit_group_ = true
+
+[node name="concrete_floor2" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(12.0671, 0, 0, 0, 0.131811, 0, 0, 0, 3.10321, 0, 3.60774, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_7a6di")
+metadata/_edit_group_ = true
+
+[node name="wall1" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00578952, 1.12257, 1.54432)
+use_collision = true
+size = Vector3(12.0666, 5.19544, 0.110191)
+material = SubResource("StandardMaterial3D_eqw3a")
+metadata/_edit_group_ = true
+
+[node name="wall2" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07679, -1.58954)
+use_collision = true
+size = Vector3(12.0666, 5.19544, 0.110191)
+material = SubResource("StandardMaterial3D_eqw3a")
+metadata/_edit_group_ = true
+
+[node name="concrete_floor3" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(12.0671, 0, 0, 0, 0.131811, 0, 0, 0, 3.10321, 12.0366, 0.5, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_7a6di")
+metadata/_edit_group_ = true
+
+[node name="concrete_floor4" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(12.0671, 0, 0, 0, 0.131811, 0, 0, 0, 3.10321, 12.0366, 3.60774, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_7a6di")
+metadata/_edit_group_ = true
+
+[node name="wall3" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0309, 1.12257, 1.54432)
+use_collision = true
+size = Vector3(12.0666, 5.19544, 0.110191)
+material = SubResource("StandardMaterial3D_eqw3a")
+metadata/_edit_group_ = true
+
+[node name="wall4" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0366, 1.07679, -1.58954)
+use_collision = true
+size = Vector3(12.0666, 5.19544, 0.110191)
+material = SubResource("StandardMaterial3D_eqw3a")
+metadata/_edit_group_ = true
 
 [node name="Env" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
+
+[node name="light1" type="SpotLight3D" parent="Env"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.756826, 2.94211, 0)
+light_energy = 1.444
+light_indirect_energy = 0.778
+light_volumetric_fog_energy = 0.778
+light_specular = 0.611
+
+[node name="light2" type="SpotLight3D" parent="Env"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.87576, 2.94211, 0)
+light_energy = 1.444
+light_indirect_energy = 0.778
+light_volumetric_fog_energy = 0.778
+light_specular = 0.611
+
+[node name="light3" type="SpotLight3D" parent="Env"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 10.4334, 2.94211, 0)
+light_energy = 1.444
+light_indirect_energy = 0.778
+light_volumetric_fog_energy = 0.778
+light_specular = 0.611
 
 [node name="Player" parent="." instance=ExtResource("2_4c1ys")]
 transform = Transform3D(-0.255024, 0, -0.966935, 0, 1, 0, 0.966935, 0, -0.255024, -5.75708, 0.649462, 0.0584645)
