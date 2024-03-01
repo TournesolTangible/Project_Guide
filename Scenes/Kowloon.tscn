@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://dcrwgc6qpy87v"]
+[gd_scene load_steps=4 format=3 uid="uid://dcrwgc6qpy87v"]
+
+[ext_resource type="Texture2D" uid="uid://cmkbosp1oxbwu" path="res://Assets/textures/concrete6.png" id="1_wwdh4"]
+[ext_resource type="PackedScene" uid="uid://dpm3jewkmcw35" path="res://player.tscn" id="2_4c1ys"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7a6di"]
+albedo_texture = ExtResource("1_wwdh4")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.03527
+uv1_world_triplanar = true
+uv2_triplanar = true
+uv2_triplanar_sharpness = 1.1487
 
 [node name="Kowloon" type="Node3D"]
+
+[node name="Stage" type="Node3D" parent="."]
+
+[node name="concrete_floor" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(12.0671, 0, 0, 0, 0.131811, 0, 0, 0, 0.984246, 0, 0.5, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_7a6di")
+
+[node name="Env" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
+
+[node name="Player" parent="." instance=ExtResource("2_4c1ys")]
+transform = Transform3D(-0.255024, 0, -0.966935, 0, 1, 0, 0.966935, 0, -0.255024, -5.75708, 0.649462, 0.0584645)

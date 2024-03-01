@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://8blwojlm4m7"]
+[gd_scene load_steps=12 format=3 uid="uid://8blwojlm4m7"]
 
 [ext_resource type="Texture2D" uid="uid://dg5025d56otus" path="res://Assets/textures/grass1.png" id="1_fsb3x"]
 [ext_resource type="Texture2D" uid="uid://bncyfbbq4lt7" path="res://Assets/textures/dirt_claydarked.png" id="2_sau35"]
@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dpm3jewkmcw35" path="res://player.tscn" id="3_bdwhp"]
 [ext_resource type="PackedScene" uid="uid://omrtix6u2rio" path="res://Assets/objects/well.tscn" id="4_n3txi"]
 [ext_resource type="PackedScene" uid="uid://bsk703mxkybts" path="res://Assets/objects/wind_mill_001.tscn" id="6_vvhtu"]
-
-[sub_resource type="Environment" id="Environment_sglyr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wf2f"]
 albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
@@ -32,8 +30,11 @@ glow_enabled = true
 
 [node name="World" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_sglyr")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.878817, -0.477159, -2.08573e-08, 0, -4.37114e-08, 1, -0.477159, 0.878817, 3.84143e-08, 0, 0, 0)
+light_color = Color(0.368627, 0.333333, 0.0627451, 1)
+light_energy = 20.75
+shadow_enabled = true
 
 [node name="Stage" type="Node3D" parent="."]
 transform = Transform3D(1.92855, 0, 0, 0, 1, 0, 0, 0, 2.02438, 0, 0, 0)
@@ -68,10 +69,6 @@ material = SubResource("StandardMaterial3D_2viij")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
 environment = SubResource("Environment_576er")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("3_bdwhp")]
 
