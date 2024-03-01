@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://8blwojlm4m7"]
+[gd_scene load_steps=13 format=3 uid="uid://8blwojlm4m7"]
 
 [ext_resource type="Texture2D" uid="uid://dg5025d56otus" path="res://Assets/textures/grass1.png" id="1_fsb3x"]
 [ext_resource type="Texture2D" uid="uid://bncyfbbq4lt7" path="res://Assets/textures/dirt_claydarked.png" id="2_sau35"]
 [ext_resource type="Texture2D" uid="uid://626p8piimkxh" path="res://Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_ydrsi"]
 [ext_resource type="PackedScene" uid="uid://dpm3jewkmcw35" path="res://player.tscn" id="3_bdwhp"]
 [ext_resource type="PackedScene" uid="uid://omrtix6u2rio" path="res://Assets/objects/well.tscn" id="4_n3txi"]
+[ext_resource type="PackedScene" uid="uid://d31tkpgubad13" path="res://Assets/objects/walkway.tscn" id="5_bdpuy"]
 [ext_resource type="PackedScene" uid="uid://bsk703mxkybts" path="res://Assets/objects/wind_mill_001.tscn" id="6_vvhtu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wf2f"]
@@ -32,8 +33,8 @@ glow_enabled = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.878817, -0.477159, -2.08573e-08, 0, -4.37114e-08, 1, -0.477159, 0.878817, 3.84143e-08, 0, 0, 0)
-light_color = Color(0.368627, 0.333333, 0.0627451, 1)
-light_energy = 20.75
+light_color = Color(0.360784, 0.337255, 0.109804, 1)
+light_energy = 24.4
 shadow_enabled = true
 
 [node name="Stage" type="Node3D" parent="."]
@@ -44,26 +45,123 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_5wf2f")
+metadata/_edit_lock_ = true
 
 [node name="hill" type="CSGSphere3D" parent="Stage"]
 transform = Transform3D(2.50926, 0, 0, 0, 7.42976, 0, 0, 0, 6.21749, 8.9668, 0.0282512, 0)
+use_collision = true
+rings = 7
 material = SubResource("StandardMaterial3D_2viij")
 
 [node name="hill2" type="CSGSphere3D" parent="Stage"]
 transform = Transform3D(2.50926, 0, 0, 0, 7.42975, 0, 0, 0, 6.21749, 8.96679, 0.0282511, 7.12045)
+use_collision = true
 material = SubResource("StandardMaterial3D_2viij")
 
 [node name="hill3" type="CSGSphere3D" parent="Stage"]
 transform = Transform3D(0.695055, 0, -5.9742, 0, 4.89774, 0, 2.41107, 0, 1.72222, 6.19251, 0.0282511, 9.04029)
+use_collision = true
 material = SubResource("StandardMaterial3D_2viij")
 
 [node name="hill4" type="CSGSphere3D" parent="Stage"]
 transform = Transform3D(0.783788, 0, -2.90989, 0, 11.675, 0, 2.71888, 0, 0.83885, 2.34389, 0.0282511, 9.04028)
+use_collision = true
 material = SubResource("StandardMaterial3D_2viij")
 
 [node name="hill5" type="CSGSphere3D" parent="Stage"]
 transform = Transform3D(0.783788, 0, -2.90988, 0, 4.4147, 0, 2.71888, 0, 0.83885, -0.328595, 0.0282511, 9.04028)
+use_collision = true
 material = SubResource("StandardMaterial3D_2viij")
+
+[node name="hill6" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(-2.50909, 0, 0.0725952, 0, 7.42975, 0, -0.029298, 0, -6.21707, -9.28256, 0.0282511, -6.21788)
+use_collision = true
+material = SubResource("StandardMaterial3D_2viij")
+
+[node name="hill7" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(-0.666855, 0, 5.9939, 0, 4.89774, 0, -2.41902, 0, -1.65235, -6.48493, 0.0282511, -8.10673)
+use_collision = true
+material = SubResource("StandardMaterial3D_2viij")
+
+[node name="hill8" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(-0.751989, 0, 2.91948, 0, 11.675, 0, -2.72785, 0, -0.804817, -2.63658, 0.0282511, -8.06392)
+use_collision = true
+material = SubResource("StandardMaterial3D_2viij")
+
+[node name="hill9" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(-0.751988, 0, 2.91948, 0, 4.41469, 0, -2.72785, 0, -0.804817, 0.035719, 0.0282511, -8.03418)
+use_collision = true
+material = SubResource("StandardMaterial3D_2viij")
+
+[node name="hill14" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(-0.751988, 0, 2.91948, 0, 4.41469, 0, -2.72785, 0, -0.804817, 10.2711, 0.0282511, 3.28812)
+use_collision = true
+material = SubResource("StandardMaterial3D_2viij")
+
+[node name="hill10" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(-1.46176, 0, 5.05355, 0, 7.42975, 0, -2.03952, 0, -3.62199, 2.97478, 0.0282511, -8.58018)
+use_collision = true
+material = SubResource("StandardMaterial3D_2viij")
+
+[node name="hill11" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(1.55481, 0, 4.88007, 0, 4.89773, 0, -1.9695, 0, 3.85253, 6.22891, 0.0282511, -7.5504)
+use_collision = true
+material = SubResource("StandardMaterial3D_2viij")
+
+[node name="hill12" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(1.7533, 0, 2.37696, 0, 11.675, 0, -2.22094, 0, 1.87647, 8.47091, 0.0282511, -4.57034)
+use_collision = true
+material = SubResource("StandardMaterial3D_2viij")
+
+[node name="hill13" type="CSGSphere3D" parent="Stage"]
+transform = Transform3D(1.7533, 0, 2.37696, 0, 4.41469, 0, -2.22094, 0, 1.87647, 10.0278, 0.0282511, -2.50098)
+use_collision = true
+material = SubResource("StandardMaterial3D_2viij")
+
+[node name="well" parent="Stage" instance=ExtResource("4_n3txi")]
+transform = Transform3D(0.259262, 0, 0, 0, 0.5, 0, 0, 0, 0.246989, 5.42492, 0, -3.45785)
+
+[node name="windMill001" parent="Stage" instance=ExtResource("6_vvhtu")]
+transform = Transform3D(0.00480543, 0, 0.518502, 0, 1, 0, -0.493957, 0, 0.00457795, -6.08365, 0, 6.03703)
+
+[node name="Walkway" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.0118725, 0, -0.518388, 0, 1, 0, 0.493849, 0, 0.0113105, -4.12775, 0, 5.97284)
+
+[node name="Walkway2" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.0552085, 0, -0.515577, 0, 1, 0, 0.49117, 0, 0.052595, -2.65475, 0, 5.8539)
+
+[node name="Walkway3" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.0552085, 0, -0.515577, 0, 1, 0, 0.49117, 0, 0.052595, -1.17281, 0, 5.66926)
+
+[node name="Walkway5" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.493263, 0, -0.0292792, 0, 0.999999, 0, 0.0267991, 0, 0.517684, 0.186909, 0, 3.9693)
+
+[node name="Walkway6" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.493984, 0, 0.0120987, 0, 0.999999, 0, -0.0166136, 0, 0.518111, 0.177677, 0, 2.56102)
+
+[node name="Walkway7" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.493984, 0, 0.0120987, 0, 0.999999, 0, -0.0166136, 0, 0.518111, 0.100388, 0, 1.13912)
+
+[node name="Walkway8" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(-0.00339548, 0, -0.518489, 0, 0.999998, 0, 0.493979, 0, -0.00471562, 2.62866, 0, -1.8973)
+
+[node name="Walkway9" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.0400025, 0, -0.516955, 0, 0.999998, 0, 0.492641, 0, 0.036636, 4.10482, 0, -1.97282)
+
+[node name="Walkway10" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.0400025, 0, -0.516955, 0, 0.999998, 0, 0.492641, 0, 0.036636, 5.59203, 0, -2.11374)
+
+[node name="Walkway11" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.0400025, 0, -0.516955, 0, 0.999999, 0, 0.492641, 0, 0.036636, 3.63704, 0, -1.97282)
+
+[node name="Walkway12" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.0400025, 0, -0.516955, 0, 0.999999, 0, 0.492641, 0, 0.036636, 5.12425, 0, -2.11374)
+
+[node name="Walkway14" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.0559624, 0, -0.515493, 0, 0.999997, 0, 0.491083, 0, 0.0533866, 1.136, 0, -1.62148)
+
+[node name="Walkway4" parent="Stage" instance=ExtResource("5_bdpuy")]
+transform = Transform3D(0.49407, 0, 0.00915065, 0, 0.999999, 0, -0.0138027, 0, 0.518171, 0.227589, 0, 5.38482)
 
 [node name="Env" type="Node3D" parent="."]
 
@@ -71,9 +169,4 @@ material = SubResource("StandardMaterial3D_2viij")
 environment = SubResource("Environment_576er")
 
 [node name="Player" parent="." instance=ExtResource("3_bdwhp")]
-
-[node name="well" parent="." instance=ExtResource("4_n3txi")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.4622, 0, -7)
-
-[node name="windMill001" parent="." instance=ExtResource("6_vvhtu")]
-transform = Transform3D(0.00926751, 0, 0.999957, 0, 1, 0, -0.999957, 0, 0.00926751, -11.7326, 0, 12.2212)
+transform = Transform3D(-0.997954, 0, -0.0639401, 0, 1, 0, 0.0639401, 0, -0.997954, 0, 0, -2.24568)
