@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3rgyjcv0gxkr"]
+
+[ext_resource type="ArrayMesh" uid="uid://83xvvcblmoy6" path="res://Assets/models/well.obj" id="1_l2aim"]
+
+[node name="WellNode" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.04464)
+
+[node name="Well" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -3.99827, -5.26144)
+mesh = ExtResource("1_l2aim")
+skeleton = NodePath("../..")

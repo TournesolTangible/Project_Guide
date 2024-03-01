@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpm3jewkmcw35"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_fdipk"]
+[ext_resource type="PackedScene" uid="uid://um02hfe2nq1y" path="res://Assets/models/r_hard_point1.glb" id="2_h78ig"]
+[ext_resource type="Script" path="res://Scripts/r_hard_point1.gd" id="3_hahh1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jki25"]
+radius = 0.25
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_fdipk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_jki25")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="r_hard_point1" parent="Head" instance=ExtResource("2_h78ig")]
+transform = Transform3D(-0.822963, -0.0161889, 0.567865, -0.562474, 0.163491, -0.81049, -0.0797197, -0.986412, -0.143652, 0.270397, -0.177285, -0.248851)
+script = ExtResource("3_hahh1")
+
+[node name="point_position" type="Marker3D" parent="Head/r_hard_point1"]
+transform = Transform3D(-0.822962, -0.562474, -0.0797198, -0.0161885, 0.16349, -0.986412, 0.567864, -0.81049, -0.143653, 0.163444, 0.53617, -0.224012)
