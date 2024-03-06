@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://8blwojlm4m7"]
+[gd_scene load_steps=21 format=3 uid="uid://8blwojlm4m7"]
 
 [ext_resource type="Texture2D" uid="uid://dg5025d56otus" path="res://Assets/textures/grass1.png" id="1_fsb3x"]
 [ext_resource type="Texture2D" uid="uid://626p8piimkxh" path="res://Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_ydrsi"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://cats6gncm0ovl" path="res://Assets/objects/road_wood_1.tscn" id="11_x658b"]
 [ext_resource type="PackedScene" uid="uid://cwuvx4irxdjl2" path="res://Assets/objects/road_wood_4.tscn" id="12_viwgm"]
 [ext_resource type="PackedScene" uid="uid://bwcd2jgonwaa6" path="res://Assets/objects/fense_1.tscn" id="13_qrwlw"]
+[ext_resource type="PackedScene" uid="uid://dp3rj4sttm78p" path="res://Assets/objects/gate_3.tscn" id="15_mjhsb"]
+[ext_resource type="PackedScene" uid="uid://bw3m7ge0efbmd" path="res://Assets/objects/bridge.tscn" id="16_bu4t6"]
+[ext_resource type="PackedScene" uid="uid://bhqm1o18g6oef" path="res://Assets/objects/lamp_2.tscn" id="16_y83u7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wf2f"]
 albedo_color = Color(0.552941, 0.552941, 0.552941, 1)
@@ -133,6 +136,9 @@ transform = Transform3D(-0.00469497, 0, -0.999989, 0, 1, 0, 0.999989, 0, -0.0046
 [node name="road_wood_6" parent="." instance=ExtResource("12_viwgm")]
 transform = Transform3D(-0.00469497, 0, -0.999989, 0, 1, 0, 0.999989, 0, -0.00469497, 10.8417, -0.197207, -2.74175)
 
+[node name="road_wood_8" parent="." instance=ExtResource("12_viwgm")]
+transform = Transform3D(-0.00469497, 0, -0.999989, 0, 1, 0, 0.999989, 0, -0.00469497, 12.8256, -0.268107, -2.74175)
+
 [node name="road_wood_7" parent="." instance=ExtResource("12_viwgm")]
 transform = Transform3D(-0.00469497, 0, -0.999989, 0, 1, 0, 0.999989, 0, -0.00469497, -8.59272, -0.197207, 12.295)
 
@@ -140,10 +146,10 @@ transform = Transform3D(-0.00469497, 0, -0.999989, 0, 1, 0, 0.999989, 0, -0.0046
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8887, -4.76837e-07, -9.81625)
 
 [node name="Fense_2" parent="." instance=ExtResource("13_qrwlw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8887, -4.76837e-07, -6.34571)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8887, -4.76837e-07, -6.35465)
 
 [node name="Fense_3" parent="." instance=ExtResource("13_qrwlw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8887, -4.76837e-07, -2.73229)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8887, -4.76837e-07, -2.88415)
 
 [node name="Fense_6" parent="." instance=ExtResource("13_qrwlw")]
 transform = Transform3D(0.717081, 0, -0.69699, 0, 1, 0, 0.69699, 0, 0.717081, 19.4796, -4.76837e-07, 12.8848)
@@ -155,7 +161,19 @@ transform = Transform3D(0.717081, 0, -0.69699, 0, 1, 0, 0.69699, 0, 0.717081, 17
 transform = Transform3D(0.717081, 0, -0.69699, 0, 1, 0, 0.69699, 0, 0.717081, 14.5421, -4.76837e-07, 17.9646)
 
 [node name="Fense_4" parent="." instance=ExtResource("13_qrwlw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8887, -4.76837e-07, 0.733696)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8887, -4.76837e-07, 0.562885)
 
 [node name="Fense_5" parent="." instance=ExtResource("13_qrwlw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8887, -4.76837e-07, 3.06381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8887, -4.76837e-07, 3.98556)
+
+[node name="Lamp_3" parent="." instance=ExtResource("16_y83u7")]
+transform = Transform3D(-0.0409689, 0, 0.99916, 0, 1, 0, -0.99916, 0, -0.0409689, 17.2912, -4.76837e-07, -6.83531)
+
+[node name="Lamp_4" parent="." instance=ExtResource("16_y83u7")]
+transform = Transform3D(-0.0409689, 0, 0.99916, 0, 1, 0, -0.99916, 0, -0.0409689, -8.0582, -4.76837e-07, 9.25649)
+
+[node name="gate_3" parent="." instance=ExtResource("15_mjhsb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2029, -0.0176959, -2.81293)
+
+[node name="bridge" parent="." instance=ExtResource("16_bu4t6")]
+transform = Transform3D(0.0225652, 0, -0.999745, 0, 1, 0, 0.999745, 0, 0.0225652, 25.8136, 0, -2.95117)

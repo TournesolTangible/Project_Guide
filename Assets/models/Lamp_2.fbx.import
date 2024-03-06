@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://55fukt7yiw2n"
-path="res://.godot/imported/Fense_2.fbx-43de6e7ae514328b91e6d9f933dd7508.scn"
+uid="uid://drh5xn56xm7fc"
+path="res://.godot/imported/Lamp_2.fbx-f5897f073f3e7f60f7c5b9450f2326de.scn"
 
 [deps]
 
-source_file="res://Assets/models/Fense_2.fbx"
-dest_files=["res://.godot/imported/Fense_2.fbx-43de6e7ae514328b91e6d9f933dd7508.scn"]
+source_file="res://Assets/models/Lamp_2.fbx"
+dest_files=["res://.godot/imported/Lamp_2.fbx-f5897f073f3e7f60f7c5b9450f2326de.scn"]
 
 [params]
 

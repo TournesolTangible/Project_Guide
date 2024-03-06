@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cumiowliknede"
-path="res://.godot/imported/Fense_3.fbx-7b0f4619873ef364da05c8113c533cf5.scn"
+uid="uid://7wi0k5faskxr"
+path="res://.godot/imported/gate_3.fbx-d557610b7613e3eded2668ef6de30817.scn"
 
 [deps]
 
-source_file="res://Assets/models/Fense_3.fbx"
-dest_files=["res://.godot/imported/Fense_3.fbx-7b0f4619873ef364da05c8113c533cf5.scn"]
+source_file="res://Assets/models/gate_3.fbx"
+dest_files=["res://.godot/imported/gate_3.fbx-d557610b7613e3eded2668ef6de30817.scn"]
 
 [params]
 

@@ -1,19 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwcd2jgonwaa6"]
 
 [ext_resource type="PackedScene" uid="uid://dktiyg4by7y1k" path="res://Assets/models/Fense_1.fbx" id="1_2vji8"]
-[ext_resource type="Texture2D" uid="uid://bncyfbbq4lt7" path="res://Assets/textures/dirt_claydarked.png" id="2_j7uav"]
+[ext_resource type="Texture2D" uid="uid://b7gaxw6kv8g2p" path="res://Assets/textures/dirt_clay.png" id="2_gpl0h"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l7sh"]
-albedo_texture = ExtResource("2_j7uav")
-metallic = 1.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yeu2i"]
+albedo_texture = ExtResource("2_gpl0h")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6b02w"]
-size = Vector3(0.197434, 3.91448, 3.62301)
+size = Vector3(0.197434, 3.18, 3.62301)
 
 [node name="Fense_1" instance=ExtResource("1_2vji8")]
 
 [node name="Fense_1" parent="RootNode" index="0"]
-material_override = SubResource("StandardMaterial3D_2l7sh")
+surface_material_override/0 = SubResource("StandardMaterial3D_yeu2i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
