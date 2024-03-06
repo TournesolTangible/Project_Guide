@@ -12,9 +12,11 @@ func _process(delta):
 
 func _physics_process(delta):
 	
-	if Input.is_action_pressed("lmb"):
-		
-		rotate_x(-deg_to_rad(5))
-		
-	if Input.is_action_pressed("rmb"):
-		rotate_x(deg_to_rad(5))
+#	if Input.is_action_pressed("lmb"):
+#
+#		rotate_x(-deg_to_rad(5))
+#
+#	if Input.is_action_pressed("rmb"):
+#		rotate_x(deg_to_rad(5))
+
+	pass

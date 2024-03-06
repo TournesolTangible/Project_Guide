@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://by1mt2ctxrgsk"]
+
+[ext_resource type="PackedScene" uid="uid://um02hfe2nq1y" path="res://Assets/models/hands/r_hard_point1.glb" id="1_gics6"]
+
+[node name="r_hard_point1" instance=ExtResource("1_gics6")]
+
+[node name="R_Hard_Point1" parent="." index="0"]
+cast_shadow = 0
