@@ -16,6 +16,8 @@ var direction = Vector3.ZERO
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var hasKey = false
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -55,3 +57,41 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 
 	move_and_slide()
+
+func get_key():
+	hasKey = true
+func lose_key():
+	hasKey = false
+
+func set_hand_open():
+	$Head/hand.set_hand_open()
+
+func set_hand_point():
+	$Head/hand.set_hand_point()
+
+func hide_hand():
+	$Head/hand.hide()
+func show_hand():
+	$Head/hand.show()
+
+func _on_windmill_area_body_entered(body):
+	if body.is_in_group("Player"):
+		var textnode = get_node("../Stage/windmill/windmill_text")
+		textnode.show()
+		
+		hide_hand()
+		var knob_hand = get_node("../Stage/windmill/knob/knob_hand")
+		knob_hand.show()
+		
+		
+
+func _on_windmill_area_body_exited(body):
+	if body.is_in_group("Player"):
+		var textnode = get_node("../Stage/windmill/windmill_text")
+		textnode.hide()
+		
+		show_hand()
+		var knob_hand = get_node("../Stage/windmill/knob/knob_hand")
+		knob_hand.hide()
+		
+

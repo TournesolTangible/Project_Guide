@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://by1mt2ctxrgsk"]
+[gd_scene load_steps=4 format=3 uid="uid://by1mt2ctxrgsk"]
 
 [ext_resource type="PackedScene" uid="uid://um02hfe2nq1y" path="res://Assets/models/hands/r_hard_point1.glb" id="1_gics6"]
+[ext_resource type="PackedScene" uid="uid://cvg80hhwxc7dr" path="res://Assets/models/hands/r_hard_paper.glb" id="2_8t1sq"]
+[ext_resource type="Script" path="res://Scripts/r_hard_point1.gd" id="2_qwsqg"]
 
-[node name="r_hard_point1" instance=ExtResource("1_gics6")]
+[node name="Hand" instance=ExtResource("1_gics6")]
+script = ExtResource("2_qwsqg")
 
 [node name="R_Hard_Point1" parent="." index="0"]
 cast_shadow = 0
+
+[node name="R_Hard_Paper" parent="." index="1" instance=ExtResource("2_8t1sq")]
+transform = Transform3D(0.000558452, 1, 0, -1, 0.000558452, 0, 0, 0, 1, 0.00737405, 0, -0.0152169)
+visible = false
