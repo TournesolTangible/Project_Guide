@@ -1,29 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2d2lsxj366ba"]
+[gd_scene load_steps=11 format=3 uid="uid://c2d2lsxj366ba"]
 
+[ext_resource type="Texture2D" uid="uid://bco6p3n6wf67v" path="res://Assets/textures/asphalt.png" id="1_kdpja"]
 [ext_resource type="PackedScene" uid="uid://dpm3jewkmcw35" path="res://player.tscn" id="1_yoja3"]
+[ext_resource type="Texture2D" uid="uid://bncyfbbq4lt7" path="res://Assets/textures/dirt_claydarked.png" id="2_ns854"]
+[ext_resource type="Texture2D" uid="uid://cmkbosp1oxbwu" path="res://Assets/textures/concrete6.png" id="3_27ij0"]
+[ext_resource type="PackedScene" uid="uid://bsk703mxkybts" path="res://Assets/objects/wind_mill_001.tscn" id="5_yq4mc"]
+[ext_resource type="PackedScene" uid="uid://bhqm1o18g6oef" path="res://Assets/objects/lamp_2.tscn" id="6_smbbe"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s63i7"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtt16"]
+albedo_texture = ExtResource("1_kdpja")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
-[sub_resource type="Sky" id="Sky_tf04n"]
-sky_material = SubResource("ProceduralSkyMaterial_s63i7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbt5p"]
+albedo_color = Color(0.870588, 0.870588, 0.870588, 1)
+albedo_texture = ExtResource("1_kdpja")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
-[sub_resource type="Environment" id="Environment_6rc40"]
-background_mode = 2
-sky = SubResource("Sky_tf04n")
-ambient_light_sky_contribution = 0.85
-tonemap_mode = 2
-glow_enabled = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4eof"]
+albedo_texture = ExtResource("2_ns854")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d53k0"]
+albedo_texture = ExtResource("3_27ij0")
+uv1_triplanar = true
 
 [node name="Windmill_Interior" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6rc40")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 1.39064, 0)
+transform = Transform3D(-0.826098, 0.563526, 2.46325e-08, 0, -4.37114e-08, 1, 0.563526, 0.826098, 3.61099e-08, 0, 0, 0)
 shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
 [node name="Stage" type="Node3D" parent="."]
 
@@ -31,74 +39,118 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514464, 1.51542, -3.72932)
 use_collision = true
 size = Vector3(4.96169, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
 
 [node name="wall7" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.944891, 1.51542, 4.22611)
 use_collision = true
 size = Vector3(5.02796, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
 
 [node name="wall2" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -2.39469, 1.51542, -1.61062)
 use_collision = true
 size = Vector3(6.00354, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
 
 [node name="wall4" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 4.36322, 1.51542, 2.28227)
 use_collision = true
 size = Vector3(4.77773, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
 
 [node name="wall5" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 4.15553, 1.51542, -1.58034)
 use_collision = true
 size = Vector3(5.24154, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
 
 [node name="wall6" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -2.50145, 1.51542, 2.39293)
 use_collision = true
 size = Vector3(4.54196, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
 
 [node name="wall3" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0.514464, 4.1114, -3.2217)
 use_collision = true
 size = Vector3(4.96169, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
 
 [node name="wall8" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.944891, 4.1114, 3.83713)
 use_collision = true
 size = Vector3(5.02796, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
 
 [node name="wall9" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(0.5, 0.433013, 0.75, 0, 0.866025, -0.5, -0.866025, 0.25, 0.433013, -2.17173, 4.1114, -1.43432)
 use_collision = true
 size = Vector3(6.00354, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
 
 [node name="wall10" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(0.5, -0.433013, 0.75, 0, 0.866025, 0.5, -0.866025, -0.25, 0.433013, 4.11907, 4.1114, 1.86966)
 use_collision = true
 size = Vector3(4.77773, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
 
 [node name="wall11" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(-0.5, -0.433013, 0.75, 0, 0.866025, 0.5, -0.866025, 0.25, -0.433013, 3.84843, 4.1114, -1.26488)
 use_collision = true
 size = Vector3(5.24154, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
 
 [node name="wall12" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(-0.5, 0.433013, 0.75, 0, 0.866025, -0.5, -0.866025, -0.25, -0.433013, -2.14889, 4.1114, 2.19427)
 use_collision = true
 size = Vector3(4.54196, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
 
 [node name="post" type="CSGCylinder3D" parent="Stage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.987571, 3.57561, 0.555286)
 use_collision = true
 radius = 0.28239
 height = 8.13008
+material = SubResource("StandardMaterial3D_a4eof")
 
 [node name="floor" type="CSGBox3D" parent="Stage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977585, 0, 0.255569)
 use_collision = true
 size = Vector3(10.9179, 0.002, 8.23963)
+material = SubResource("StandardMaterial3D_d53k0")
+
+[node name="floor2" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977585, 5.47196, 0.255569)
+use_collision = true
+size = Vector3(10.9179, 0.002, 8.23963)
+material = SubResource("StandardMaterial3D_d53k0")
 
 [node name="Env" type="Node3D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_yoja3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31923, 0.272132, 0.687273)
+
+[node name="windMill001" parent="." instance=ExtResource("5_yq4mc")]
+transform = Transform3D(-0.147402, 0.0290731, -0.988649, 0.00428724, 0.999577, 0.0287552, 0.989067, 0, -0.147464, 7.00231, 0.0723308, 0.968182)
+
+[node name="Lamp_2" parent="." instance=ExtResource("6_smbbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47228, 0.469766, 0.584645)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02865, 2.37153, -0.0300416)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 2.103
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lamp_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02865, 2.37153, 0.249586)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 2.103
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lamp_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02865, 2.37153, -0.365785)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 2.103
+omni_attenuation = 0.594603
