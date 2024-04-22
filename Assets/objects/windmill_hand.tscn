@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://diegji2v7ause"]
+
+[ext_resource type="PackedScene" uid="uid://cbeflmbfga0gs" path="res://Assets/models/hands/r_smooth_rock.glb" id="1_0xp7a"]
+[ext_resource type="Texture2D" uid="uid://cp1vupbj24fsu" path="res://Assets/environment_models/The Attic_DefaultMaterial_Metallic.jpg-DefaultMaterial_Roughness_39.png" id="2_oel1y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l381g"]
+albedo_color = Color(0.0784314, 0.00784314, 0.00784314, 0.219608)
+albedo_texture = ExtResource("2_oel1y")
+roughness = 0.85
+
+[node name="r_smooth_rock" instance=ExtResource("1_0xp7a")]
+
+[node name="R_Smooth_Rock" parent="." index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Key" type="Node3D" parent="." index="1"]
+transform = Transform3D(-0.997546, 0, 0.0700176, 0, 1, 0, -0.0700176, 0, -0.997546, -0.177303, 0, 0.0237916)
+
+[node name="ring" type="CSGTorus3D" parent="Key" index="0"]
+transform = Transform3D(0.854726, 0, 0, 0, -5.94191e-08, -1, 0, 1.35935, -4.37114e-08, 0.0336313, 0, 0)
+material_override = SubResource("StandardMaterial3D_l381g")
+inner_radius = 0.0670168
+outer_radius = 0.138155
+
+[node name="stem" type="CSGCylinder3D" parent="Key" index="1"]
+transform = Transform3D(-4.37114e-08, 0.854726, 0, -1, -3.73613e-08, 0, 0, 0, 1.35935, 0.267477, 0, 0)
+material_override = SubResource("StandardMaterial3D_l381g")
+radius = 0.0311917
+height = 0.366692
+
+[node name="tooth" type="CSGCylinder3D" parent="Key" index="2"]
+transform = Transform3D(0.854726, 0, 0, 0, 1, 0, 0, 0, 1.35935, 0.360089, -0.061849, 0)
+material_override = SubResource("StandardMaterial3D_l381g")
+radius = 0.0239779
+height = 0.164197
+
+[node name="tooth2" type="CSGCylinder3D" parent="Key" index="3"]
+transform = Transform3D(0.854726, 0, 0, 0, 1, 0, 0, 0, 1.35935, 0.264811, -0.0525701, 0)
+material_override = SubResource("StandardMaterial3D_l381g")
+radius = 0.0239779
+height = 0.111268

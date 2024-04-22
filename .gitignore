@@ -1,0 +1,6 @@
+# Godot 4+ specific ignores
+.godot/
+addons/
+export_presets.cfg
+Assets/environmnet_models/Alley_with_club/*
+Assets/environment_models/Alley_with_club

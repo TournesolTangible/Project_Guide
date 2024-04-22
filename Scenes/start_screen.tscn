@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0mwobfgkwu2i"]
+
+[ext_resource type="FontFile" uid="uid://dsl2xgefydlgn" path="res://Assets/Fonts/CaveatBrush-Regular.ttf" id="2_4wbpx"]
+[ext_resource type="Script" path="res://Scripts/start_screen.gd" id="2_6hqmo"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/Jersey25-Regular.ttf" id="4_aqint"]
+[ext_resource type="AudioStream" uid="uid://883q0fq2oir6" path="res://Assets/Audio/sfx/electrical_buzz.mp3" id="5_s368i"]
+[ext_resource type="AudioStream" uid="uid://ogvpr4snk6q8" path="res://Assets/Audio/sfx/projector_button_push.wav" id="6_p2s10"]
+
+[sub_resource type="Theme" id="Theme_6eok1"]
+default_font = ExtResource("2_4wbpx")
+default_font_size = 12
+
+[node name="Start_Screen" type="Node3D"]
+script = ExtResource("2_6hqmo")
+
+[node name="Clock" type="Sprite2D" parent="."]
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 648)
+
+[node name="start" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = -160.0
+offset_right = -187.0
+offset_bottom = -126.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Start"
+
+[node name="start2" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = -110.0
+offset_right = -187.0
+offset_bottom = -76.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Don't Start"
+
+[node name="Title" type="RichTextLabel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -433.0
+offset_top = 100.0
+offset_right = 78.0
+offset_bottom = 376.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_6eok1")
+theme_override_fonts/normal_font = ExtResource("4_aqint")
+theme_override_font_sizes/normal_font_size = 106
+text = "Project Guide"
+
+[node name="Buzzing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_s368i")
+volume_db = 1.0
+autoplay = true
+
+[node name="ButtonPress" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_p2s10")
+pitch_scale = 1.5
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="start2" to="." method="_on_start_2_pressed"]

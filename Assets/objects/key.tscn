@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj21mt7xup5c7"]
+
+[ext_resource type="Script" path="res://Scripts/key.gd" id="1_rs0vj"]
+[ext_resource type="PackedScene" uid="uid://d1vam8tkh5r8j" path="res://Assets/models/hands/r_hard_open.glb" id="2_ph3vu"]
+[ext_resource type="Texture2D" uid="uid://cp1vupbj24fsu" path="res://Assets/environment_models/The_Attic/The Attic_DefaultMaterial_Metallic.jpg-DefaultMaterial_Roughness_39.png" id="2_xwj1u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e35ed"]
+albedo_color = Color(0.0784314, 0.00784314, 0.00784314, 0.219608)
+albedo_texture = ExtResource("2_xwj1u")
+roughness = 0.85
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_610mt"]
+height = 0.590132
+radius = 3.4825
+
+[node name="Key" type="Node3D"]
+process_mode = 4
+script = ExtResource("1_rs0vj")
+
+[node name="ring" type="CSGTorus3D" parent="."]
+transform = Transform3D(0.854726, 0, 0, 0, -5.94191e-08, -1, 0, 1.35935, -4.37114e-08, 0.0336313, 0, 0)
+material_override = SubResource("StandardMaterial3D_e35ed")
+inner_radius = 0.0670168
+outer_radius = 0.138155
+
+[node name="stem" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.854726, 0, -1, -3.73613e-08, 0, 0, 0, 1.35935, 0.267477, 0, 0)
+material_override = SubResource("StandardMaterial3D_e35ed")
+radius = 0.0311917
+height = 0.366692
+
+[node name="tooth" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.854726, 0, 0, 0, 1, 0, 0, 0, 1.35935, 0.360089, -0.061849, 0)
+material_override = SubResource("StandardMaterial3D_e35ed")
+radius = 0.0239779
+height = 0.164197
+
+[node name="tooth2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.854726, 0, 0, 0, 1, 0, 0, 0, 1.35935, 0.264811, -0.0525701, 0)
+material_override = SubResource("StandardMaterial3D_e35ed")
+radius = 0.0239779
+height = 0.111268
+
+[node name="key_area" type="Area3D" parent="."]
+
+[node name="key_collider" type="CollisionShape3D" parent="key_area"]
+shape = SubResource("CylinderShape3D_610mt")
+
+[node name="key_hand" parent="." instance=ExtResource("2_ph3vu")]
+transform = Transform3D(1.49928, -0.0390549, 0.025191, 0.0374977, 0.536242, -1.40037, 0.0274553, 1.40033, 0.536961, 0.14294, 0, -0.476784)
+visible = false
+
+[connection signal="body_entered" from="key_area" to="." method="_on_key_area_body_entered"]
+[connection signal="body_exited" from="key_area" to="." method="_on_key_area_body_exited"]

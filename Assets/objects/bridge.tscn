@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw3m7ge0efbmd"]
+
+[ext_resource type="PackedScene" uid="uid://dbelkldg4d55p" path="res://Assets/models/bridge.fbx" id="1_4uvkv"]
+
+[node name="bridge" instance=ExtResource("1_4uvkv")]
+
+[node name="Cube_024" parent="RootNode" index="0"]
+transform = Transform3D(272.008, 0, 0, 0, -6.30649e-06, 7.9474, 0, -52.9027, -9.47405e-07, 0, 0, 0)

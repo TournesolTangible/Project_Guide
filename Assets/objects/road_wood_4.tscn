@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwuvx4irxdjl2"]
+
+[ext_resource type="PackedScene" uid="uid://cqhpyf8cof4ll" path="res://Assets/models/road_wood_4.fbx" id="1_do72e"]
+[ext_resource type="Texture2D" uid="uid://b7gaxw6kv8g2p" path="res://Assets/textures/dirt_clay.png" id="2_i70ke"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1xys"]
+albedo_texture = ExtResource("2_i70ke")
+metallic = 0.4
+
+[node name="road_wood_4" instance=ExtResource("1_do72e")]
+
+[node name="Road_wood_4" parent="RootNode" index="0"]
+material_override = SubResource("StandardMaterial3D_l1xys")

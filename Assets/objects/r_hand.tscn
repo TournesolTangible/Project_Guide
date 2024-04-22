@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://by1mt2ctxrgsk"]
+
+[ext_resource type="PackedScene" uid="uid://um02hfe2nq1y" path="res://Assets/models/hands/r_hard_point1.glb" id="1_gics6"]
+[ext_resource type="PackedScene" uid="uid://cvg80hhwxc7dr" path="res://Assets/models/hands/r_hard_paper.glb" id="2_8t1sq"]
+[ext_resource type="Script" path="res://Scripts/r_hard_point1.gd" id="2_qwsqg"]
+[ext_resource type="PackedScene" uid="uid://dmmhp3nt5n38o" path="res://Assets/models/hands/r_hard_thumbsUp.glb" id="4_hovay"]
+
+[node name="Hand" instance=ExtResource("1_gics6")]
+script = ExtResource("2_qwsqg")
+
+[node name="R_Thumb" parent="." index="0" instance=ExtResource("4_hovay")]
+transform = Transform3D(0.109284, -0.95258, -0.283986, 0.210263, -0.257079, 0.943239, -0.971518, -0.162793, 0.172198, 0, 0, 0)
+
+[node name="Thumb_light" type="OmniLight3D" parent="R_Thumb" index="1"]
+transform = Transform3D(1, -4.47035e-08, -5.96046e-08, 1.49012e-08, 1, -1.47149e-07, 4.47035e-08, 1.80677e-07, 1, 0.144737, -0.00544058, 0.0739474)
+light_color = Color(0.713726, 0.619608, 0.419608, 1)
+light_energy = 2.0
+
+[node name="R_Hard_Point1" parent="." index="1"]
+visible = false
+cast_shadow = 0
+
+[node name="R_Hard_Paper" parent="." index="2" instance=ExtResource("2_8t1sq")]
+transform = Transform3D(0.000558452, 1, 0, -1, 0.000558452, 0, 0, 0, 1, 0.00737405, 0, -0.0152169)
+visible = false

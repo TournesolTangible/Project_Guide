@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3wgjpe8wygi1"]
+
+[ext_resource type="PackedScene" uid="uid://8uy24sbmcvnq" path="res://Assets/objects/bucket.glb" id="1_gfice"]
+[ext_resource type="PackedScene" uid="uid://bkj7qbrpt3c5k" path="res://Assets/models/hands/r_hard_rock.glb" id="2_3eabj"]
+[ext_resource type="Script" path="res://Assets/objects/bucket.gd" id="2_yhpys"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8yl1k"]
+size = Vector3(1.27134, 1, 1.20027)
+
+[node name="bucket" instance=ExtResource("1_gfice")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.185497, 0)
+script = ExtResource("2_yhpys")
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234506, 0)
+shape = SubResource("BoxShape3D_8yl1k")
+
+[node name="hand" parent="." index="2" instance=ExtResource("2_3eabj")]
+transform = Transform3D(-1.15227, -0.868762, -0.40929, 0.832502, -0.584922, -1.10218, 0.478754, -1.07383, 0.931491, -0.231483, 0.269126, 0.0959583)
+visible = false
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

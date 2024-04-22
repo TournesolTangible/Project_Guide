@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsk703mxkybts"]
+
+[ext_resource type="PackedScene" uid="uid://6ph4byruaqvy" path="res://Assets/models/windMill001.fbx" id="1_irleu"]
+[ext_resource type="Texture2D" uid="uid://bx4qxlbfyxcei" path="res://Assets/models/windMill-text.jpg" id="2_mhqrl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kplo2"]
+albedo_texture = ExtResource("2_mhqrl")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2f3by"]
+height = 6.25017
+radius = 3.14583
+
+[node name="windMill001" instance=ExtResource("1_irleu")]
+
+[node name="millAna_002" parent="RootNode" index="0"]
+material_override = SubResource("StandardMaterial3D_kplo2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.89347, -0.302918)
+shape = SubResource("CylinderShape3D_2f3by")

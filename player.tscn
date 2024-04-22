@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpm3jewkmcw35"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_fdipk"]
+[ext_resource type="PackedScene" uid="uid://by1mt2ctxrgsk" path="res://Assets/objects/r_hand.tscn" id="2_w7xoc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jki25"]
+radius = 0.283398
+height = 1.66736
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_467ns"]
+size = Vector3(0.793962, 0.435343, 0.808184)
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_fdipk")
+
+[node name="player_collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.786566, 0)
+shape = SubResource("CapsuleShape3D_jki25")
+
+[node name="interaction_collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28031, 0)
+shape = SubResource("BoxShape3D_467ns")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58657, 0)
+
+[node name="hand_origin" type="Marker3D" parent="Head"]
+transform = Transform3D(-0.980724, -0.18397, -0.0658444, 0.0468361, 0.105826, -0.993281, 0.189701, -0.977219, -0.0951692, 0.169433, -0.139431, -0.225798)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="hand" parent="Head" instance=ExtResource("2_w7xoc")]
+transform = Transform3D(-0.980724, -0.18397, -0.0658444, 0.0468361, 0.105826, -0.993281, 0.189701, -0.977219, -0.0951692, 0.169433, -0.139431, -0.225798)

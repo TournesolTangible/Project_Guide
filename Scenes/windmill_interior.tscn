@@ -1,0 +1,447 @@
+[gd_scene load_steps=18 format=3 uid="uid://c2d2lsxj366ba"]
+
+[ext_resource type="Texture2D" uid="uid://bco6p3n6wf67v" path="res://Assets/textures/asphalt.png" id="1_kdpja"]
+[ext_resource type="PackedScene" uid="uid://dpm3jewkmcw35" path="res://player.tscn" id="1_yoja3"]
+[ext_resource type="Texture2D" uid="uid://bncyfbbq4lt7" path="res://Assets/textures/dirt_claydarked.png" id="2_ns854"]
+[ext_resource type="Texture2D" uid="uid://cmkbosp1oxbwu" path="res://Assets/textures/concrete6.png" id="3_27ij0"]
+[ext_resource type="PackedScene" uid="uid://ccud8k16t8k2f" path="res://Assets/objects/stairs.tscn" id="4_3sxsn"]
+[ext_resource type="PackedScene" uid="uid://bsk703mxkybts" path="res://Assets/objects/wind_mill_001.tscn" id="5_yq4mc"]
+[ext_resource type="PackedScene" uid="uid://bhqm1o18g6oef" path="res://Assets/objects/lamp_2.tscn" id="6_smbbe"]
+[ext_resource type="PackedScene" uid="uid://crh0aqn8ub8po" path="res://Assets/objects/crate.tscn" id="8_iyqmp"]
+[ext_resource type="PackedScene" uid="uid://bgp1u0dy5tnep" path="res://Assets/objects/table.tscn" id="8_onvh5"]
+[ext_resource type="Script" path="res://Scripts/WindmillRoom1.gd" id="8_t7l8a"]
+[ext_resource type="PackedScene" path="res://Assets/models/hands/no_go_hands.tscn" id="9_t1tcv"]
+
+[sub_resource type="Environment" id="Environment_etia2"]
+background_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtt16"]
+albedo_texture = ExtResource("1_kdpja")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbt5p"]
+albedo_color = Color(0.870588, 0.870588, 0.870588, 1)
+albedo_texture = ExtResource("1_kdpja")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4eof"]
+albedo_texture = ExtResource("2_ns854")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d53k0"]
+albedo_texture = ExtResource("3_27ij0")
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wuu8l"]
+radius = 1.04346
+
+[node name="Windmill_Interior" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.826098, 0.563526, 2.46325e-08, 0, -4.37114e-08, 1, 0.563526, 0.826098, 3.61099e-08, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_etia2")
+
+[node name="Stage" type="Node3D" parent="."]
+
+[node name="Room1" type="Node3D" parent="Stage"]
+
+[node name="walls" type="Node3D" parent="Stage/Room1"]
+
+[node name="wall" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514464, 1.51542, -3.72932)
+use_collision = true
+size = Vector3(4.96169, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
+
+[node name="wall7" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.944891, 1.51542, 4.22611)
+use_collision = true
+size = Vector3(5.02796, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
+
+[node name="wall2" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -2.39469, 1.51542, -2.5108)
+use_collision = true
+size = Vector3(3.36406, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
+
+[node name="wall4" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 4.36322, 1.51542, 2.28227)
+use_collision = true
+size = Vector3(4.77773, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
+
+[node name="wall5" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 4.15553, 1.51542, -1.58034)
+use_collision = true
+size = Vector3(5.24154, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
+
+[node name="wall6" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -2.23847, 1.51542, 2.51129)
+use_collision = true
+size = Vector3(3.76097, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
+
+[node name="wall13" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(-0.0216409, 0.430684, 0.902243, 0.0103273, 0.902503, -0.43056, -0.999712, 0, -0.0239787, -3.09217, 3.14569, -0.172394)
+use_collision = true
+size = Vector3(3.76097, 1.65045, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
+
+[node name="wall3" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0.514464, 4.1114, -3.2217)
+use_collision = true
+size = Vector3(4.96169, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
+
+[node name="wall8" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.944891, 4.1114, 3.83713)
+use_collision = true
+size = Vector3(5.02796, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
+
+[node name="wall9" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(0.5, 0.433013, 0.75, 0, 0.866025, -0.5, -0.866025, 0.25, 0.433013, -2.17173, 4.1114, -1.43432)
+use_collision = true
+size = Vector3(6.00354, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
+
+[node name="wall10" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(0.5, -0.433013, 0.75, 0, 0.866025, 0.5, -0.866025, -0.25, 0.433013, 4.11907, 4.1114, 1.86966)
+use_collision = true
+size = Vector3(4.77773, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
+
+[node name="wall11" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(-0.5, -0.433013, 0.75, 0, 0.866025, 0.5, -0.866025, 0.25, -0.433013, 3.84843, 4.1114, -1.26488)
+use_collision = true
+size = Vector3(5.24154, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
+
+[node name="wall12" type="CSGBox3D" parent="Stage/Room1/walls"]
+transform = Transform3D(-0.5, 0.433013, 0.75, 0, 0.866025, -0.5, -0.866025, -0.25, -0.433013, -2.14889, 4.1114, 2.19427)
+use_collision = true
+size = Vector3(4.54196, 3.4792, 0.002)
+material = SubResource("StandardMaterial3D_hbt5p")
+
+[node name="windMill001" parent="Stage/Room1" instance=ExtResource("5_yq4mc")]
+transform = Transform3D(-0.146743, -0.098816, -0.984226, -0.0145719, 0.995105, -0.0977358, 0.989067, 1.58612e-09, -0.147464, 7.34804, 0.425617, 0.968182)
+
+[node name="Lamp_2" parent="Stage/Room1" instance=ExtResource("6_smbbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47228, 0.469766, 0.584645)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Stage/Room1/Lamp_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, 0.0218341)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Stage/Room1/Lamp_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, 0.301461)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Stage/Room1/Lamp_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, -0.31391)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="Lamp_3" parent="Stage/Room1" instance=ExtResource("6_smbbe")]
+transform = Transform3D(-0.0647588, 0, -0.997901, 0, 1, 0, 0.997901, 0, -0.0647588, 0.954001, 0.469766, 4.81279)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Stage/Room1/Lamp_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, 0.0218341)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Stage/Room1/Lamp_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, 0.301461)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Stage/Room1/Lamp_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, -0.31391)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="Lamp_4" parent="Stage/Room1" instance=ExtResource("6_smbbe")]
+transform = Transform3D(0.0109953, 0, 0.99994, 0, 1, 0, -0.99994, 0, 0.0109953, 0.954001, -0.11875, -4.29348)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Stage/Room1/Lamp_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, 0.0218341)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Stage/Room1/Lamp_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, 0.301461)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Stage/Room1/Lamp_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, -0.31391)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="Lamp_5" parent="Stage/Room1" instance=ExtResource("6_smbbe")]
+transform = Transform3D(-0.872641, 0, -0.488362, 0, 1, 0, 0.488362, 0, -0.872641, -3.4229, -0.11875, 1.57099)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Stage/Room1/Lamp_5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, 0.0218341)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Stage/Room1/Lamp_5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, 0.301461)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Stage/Room1/Lamp_5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53111, 2.17205, -0.31391)
+light_color = Color(0.894118, 0.737255, 0.486275, 1)
+omni_range = 3.0
+omni_attenuation = 0.594603
+
+[node name="post" type="CSGCylinder3D" parent="Stage/Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.987571, 3.57561, 0.448584)
+use_collision = true
+radius = 0.28239
+height = 8.13008
+material = SubResource("StandardMaterial3D_a4eof")
+
+[node name="floor" type="CSGBox3D" parent="Stage/Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977585, 0, 0.255569)
+use_collision = true
+size = Vector3(8.43354, 0.002, 8.23963)
+material = SubResource("StandardMaterial3D_d53k0")
+
+[node name="ceiling" type="CSGBox3D" parent="Stage/Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977585, 5.47196, 0.255569)
+use_collision = true
+size = Vector3(10.9179, 0.002, 8.23963)
+material = SubResource("StandardMaterial3D_d53k0")
+
+[node name="Table" parent="Stage/Room1" instance=ExtResource("8_onvh5")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.223962, 0.00100017, 2.73806)
+
+[node name="Room2" type="Node3D" parent="Stage"]
+
+[node name="Ceiling" type="CSGBox3D" parent="Stage/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3113, 2.35093, 0.255569)
+use_collision = true
+size = Vector3(32.2297, 0.002, 8.23963)
+material = SubResource("StandardMaterial3D_d53k0")
+
+[node name="Stairs" type="Node3D" parent="Stage/Room2"]
+
+[node name="Stairs1" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -4.41587, -1.11088, -0.0977845)
+
+[node name="Stairs2" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -5.62745, -2.2979, -0.0977845)
+
+[node name="Stairs3" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -6.82429, -3.49192, -0.0977845)
+
+[node name="Stairs4" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -8.03586, -4.67893, -0.0977845)
+
+[node name="Stairs5" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -9.22798, -5.87489, -0.0977845)
+
+[node name="Stairs6" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -10.4396, -7.06191, -0.0977845)
+
+[node name="Stairs7" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -11.6364, -8.25593, -0.0977845)
+
+[node name="Stairs8" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -12.848, -9.44294, -0.0977845)
+
+[node name="Stairs9" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -14.0408, -10.6568, -0.0977855)
+
+[node name="Stairs10" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -15.2524, -11.8438, -0.0977855)
+
+[node name="Stairs11" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -16.4492, -13.0378, -0.0977855)
+
+[node name="Stairs12" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -17.6608, -14.2249, -0.0977855)
+
+[node name="Stairs13" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -18.866, -15.4035, -0.0977845)
+
+[node name="Stairs14" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -20.0776, -16.5905, -0.0977845)
+
+[node name="Stairs15" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -21.2744, -17.7845, -0.0977845)
+
+[node name="Stairs16" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -22.486, -18.9716, -0.0977845)
+
+[node name="Stairs17" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -23.6781, -20.1675, -0.0977845)
+
+[node name="Stairs18" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -24.8897, -21.3545, -0.0977845)
+
+[node name="Stairs19" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -26.0866, -22.5486, -0.0977845)
+
+[node name="Stairs20" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -27.2981, -23.7356, -0.0977845)
+
+[node name="Stairs21" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -28.491, -24.9494, -0.0977855)
+
+[node name="Stairs22" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -29.7025, -26.1365, -0.0977855)
+
+[node name="Stairs23" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -30.8994, -27.3305, -0.0977855)
+
+[node name="Stairs24" parent="Stage/Room2/Stairs" instance=ExtResource("4_3sxsn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -32.111, -28.5175, -0.0977855)
+
+[node name="wall1" type="CSGBox3D" parent="Stage/Room2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -23.7, -8.886, -1.097)
+use_collision = true
+size = Vector3(41.0107, 22.8496, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
+
+[node name="wall2" type="CSGBox3D" parent="Stage/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91559, -1.29123, 0.940314)
+visible = false
+use_collision = true
+size = Vector3(11.4996, 8.19599, 0.002)
+material = SubResource("StandardMaterial3D_dtt16")
+
+[node name="Lights" type="Node3D" parent="Stage/Room2"]
+
+[node name="Light1" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70415, 0, 0)
+omni_range = 2.5
+
+[node name="Light2" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1107, 0, 0)
+omni_range = 2.5
+
+[node name="Light3" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5239, 0, 0)
+omni_range = 2.5
+
+[node name="Light4" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9305, 0, 0)
+omni_range = 2.5
+
+[node name="Light5" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1076, 0, 0)
+omni_range = 2.5
+
+[node name="Light6" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5142, 0, 0)
+omni_range = 2.5
+
+[node name="Light7" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9274, 0, 0)
+omni_range = 2.5
+
+[node name="Light8" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.334, 0, 0)
+omni_range = 2.5
+
+[node name="Light9" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2866, -3.74874, 0)
+omni_range = 2.5
+
+[node name="Light10" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6998, -3.74874, 0)
+omni_range = 2.5
+
+[node name="Light11" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1063, -3.74874, 0)
+omni_range = 2.5
+
+[node name="Light12" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2835, -3.74874, 0)
+omni_range = 2.5
+
+[node name="Light13" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.69, -3.74874, 0)
+omni_range = 2.5
+
+[node name="Light14" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.1033, -3.74874, 0)
+omni_range = 2.5
+
+[node name="Light15" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5098, -3.74874, 0)
+omni_range = 2.5
+
+[node name="Light16" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8166, -8.26421, 0)
+omni_range = 2.5
+
+[node name="Light17" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2299, -8.26421, 0)
+omni_range = 2.5
+
+[node name="Light18" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6364, -8.26421, 0)
+omni_range = 2.5
+
+[node name="Light19" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8136, -8.26421, 0)
+omni_range = 2.5
+
+[node name="Light20" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2201, -8.26421, 0)
+omni_range = 2.5
+
+[node name="Light21" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.6334, -8.26421, 0)
+omni_range = 2.5
+
+[node name="Light22" type="OmniLight3D" parent="Stage/Room2/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0399, -8.26421, 0)
+omni_range = 2.5
+
+[node name="Env" type="Node3D" parent="."]
+
+[node name="Room1" type="Node3D" parent="Env"]
+script = ExtResource("8_t7l8a")
+
+[node name="windmill_door" type="Area3D" parent="Env/Room1"]
+
+[node name="collider" type="CollisionShape3D" parent="Env/Room1/windmill_door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03689, 1.28642, 0.399655)
+shape = SubResource("CylinderShape3D_wuu8l")
+
+[node name="NoGoHands" parent="Env/Room1" instance=ExtResource("9_t1tcv")]
+transform = Transform3D(-0.448712, 0, -1.94901, 0, 2, 0, 1.94901, 0, -0.448712, 4.57367, 0.86794, 0.672285)
+
+[node name="Player" parent="." instance=ExtResource("1_yoja3")]
+transform = Transform3D(0.0801819, 0, 0.996781, 0, 1, 0, -0.996781, 0, 0.0801819, -0.203283, 0.272132, -0.767965)
+
+[node name="Crate" parent="." instance=ExtResource("8_iyqmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
+
+[connection signal="body_entered" from="Env/Room1/windmill_door" to="Env/Room1" method="_on_windmill_door_body_entered"]
+[connection signal="body_exited" from="Env/Room1/windmill_door" to="Env/Room1" method="_on_windmill_door_body_exited"]

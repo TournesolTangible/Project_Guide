@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp3rj4sttm78p"]
+
+[ext_resource type="PackedScene" uid="uid://7wi0k5faskxr" path="res://Assets/models/gate_3.fbx" id="1_v1fut"]
+[ext_resource type="Texture2D" uid="uid://b7gaxw6kv8g2p" path="res://Assets/textures/dirt_clay.png" id="2_v51wt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p0wc"]
+albedo_texture = ExtResource("2_v51wt")
+
+[node name="gate_3" instance=ExtResource("1_v1fut")]
+
+[node name="gate_3" parent="RootNode/gate_3_l/Skeleton3D" index="0"]
+material_override = SubResource("StandardMaterial3D_5p0wc")

@@ -1,0 +1,120 @@
+[gd_scene load_steps=3 format=3 uid="uid://c81k4qh444orr"]
+
+[ext_resource type="PackedScene" uid="uid://cbovexqs81qbv" path="res://Assets/environment_models/The_Attic/The Attic.glb" id="1_0ng2d"]
+[ext_resource type="PackedScene" uid="uid://dpm3jewkmcw35" path="res://player.tscn" id="2_xaqog"]
+
+[node name="Attic" type="Node3D"]
+
+[node name="The Attic" parent="." instance=ExtResource("1_0ng2d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="light" type="SpotLight3D" parent="The Attic"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.21943, 2.63269, 0.0733927)
+light_color = Color(1, 1, 0.894118, 1)
+spot_range = 11.893
+spot_attenuation = 0.499999
+spot_angle = 38.44
+spot_angle_attenuation = 0.277393
+
+[node name="bulblight" type="OmniLight3D" parent="The Attic/light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00279462, -0.141378)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="bulblight2" type="OmniLight3D" parent="The Attic/light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0749202, -0.0576518)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="bulblight3" type="OmniLight3D" parent="The Attic/light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.104233, -0.0576518)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="bulblight4" type="OmniLight3D" parent="The Attic/light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16558, -0.00786877, -0.0576518)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="bulblight5" type="OmniLight3D" parent="The Attic/light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103497, -0.00786877, -0.0576518)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="light2" type="SpotLight3D" parent="The Attic"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -9.48127, 2.63269, 0.0301512)
+light_color = Color(1, 1, 0.894118, 1)
+spot_range = 11.893
+spot_attenuation = 0.499999
+spot_angle = 29.35
+spot_angle_attenuation = 0.277393
+
+[node name="bulblight" type="OmniLight3D" parent="The Attic/light2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00279462, -0.141378)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="bulblight2" type="OmniLight3D" parent="The Attic/light2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0749202, -0.0576518)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="bulblight3" type="OmniLight3D" parent="The Attic/light2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.104233, -0.0576518)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="bulblight4" type="OmniLight3D" parent="The Attic/light2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16558, -0.00786877, -0.0576518)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="bulblight5" type="OmniLight3D" parent="The Attic/light2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103497, -0.00786877, -0.0576518)
+omni_range = 1.608
+omni_attenuation = 2.63901
+
+[node name="floor" type="CSGBox3D" parent="The Attic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8731, 0.0511402, 0)
+visible = false
+use_collision = true
+size = Vector3(12.934, 0.002, 9.43111)
+
+[node name="wall" type="CSGBox3D" parent="The Attic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.451, 0, 2.93047)
+visible = false
+use_collision = true
+size = Vector3(14.8379, 4.42015, 0.002)
+
+[node name="wall2" type="CSGBox3D" parent="The Attic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.451, 0, -2.92375)
+visible = false
+use_collision = true
+size = Vector3(14.8379, 4.42015, 0.002)
+
+[node name="window_wall" type="CSGBox3D" parent="The Attic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97515, 0.573938, 0.0856719)
+visible = false
+use_collision = true
+size = Vector3(0.002, 4.471, 5.77382)
+
+[node name="window_wall2" type="CSGBox3D" parent="The Attic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86923, 0.573938, 1.87239)
+visible = false
+use_collision = true
+size = Vector3(0.002, 4.471, 2.67103)
+
+[node name="window_wall3" type="CSGBox3D" parent="The Attic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86923, 0.573938, -1.83517)
+visible = false
+use_collision = true
+size = Vector3(0.002, 4.471, 2.67103)
+
+[node name="window_wall4" type="CSGBox3D" parent="The Attic"]
+transform = Transform3D(-0.269037, 0, 0.96313, 0, 1, 0, -0.96313, 0, -0.269037, -7.39325, 0.573938, 0.33506)
+visible = false
+use_collision = true
+size = Vector3(0.002, 4.471, 1.00625)
+
+[node name="Player" parent="." instance=ExtResource("2_xaqog")]
+transform = Transform3D(0.0621634, 0, -0.998066, 0, 1, 0, 0.998066, 0, 0.0621634, -4.21979, 0.146313, -1.98263)

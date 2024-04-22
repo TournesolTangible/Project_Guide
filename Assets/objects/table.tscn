@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgp1u0dy5tnep"]
+
+[ext_resource type="Texture2D" uid="uid://b7gaxw6kv8g2p" path="res://Assets/textures/dirt_clay.png" id="1_s0pwb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qayf"]
+albedo_texture = ExtResource("1_s0pwb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1smq7"]
+albedo_texture = ExtResource("1_s0pwb")
+
+[node name="Table" type="Node3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Top" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.518556, 0)
+material_override = SubResource("StandardMaterial3D_5qayf")
+use_collision = true
+size = Vector3(1.397, 0.025, 1)
+
+[node name="Leg" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.232, 0.35)
+material_override = SubResource("StandardMaterial3D_1smq7")
+size = Vector3(0.05, 0.55, 0.05)
+
+[node name="Leg2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.232, 0.35)
+material_override = SubResource("StandardMaterial3D_1smq7")
+size = Vector3(0.05, 0.55, 0.05)
+
+[node name="Leg3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.232, -0.35)
+material_override = SubResource("StandardMaterial3D_1smq7")
+size = Vector3(0.05, 0.55, 0.05)
+
+[node name="Leg4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.232, -0.35)
+material_override = SubResource("StandardMaterial3D_1smq7")
+size = Vector3(0.05, 0.55, 0.05)

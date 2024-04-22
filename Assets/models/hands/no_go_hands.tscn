@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpy4s3p7pko2i"]
+
+[ext_resource type="PackedScene" uid="uid://cvg80hhwxc7dr" path="res://Assets/models/hands/r_hard_paper.glb" id="1_rc6h7"]
+[ext_resource type="PackedScene" uid="uid://bs81fp753b10s" path="res://Assets/models/hands/l_hard_paper.glb" id="2_uebj3"]
+
+[node name="NoGoHands" type="Node3D"]
+visible = false
+
+[node name="r_hard_paper" parent="." instance=ExtResource("1_rc6h7")]
+transform = Transform3D(0.80117, -0.450382, -0.39406, -0.500614, -0.143608, -0.853675, 0.32789, 0.881211, -0.340522, 0.0743275, 0.214865, -0.0379768)
+
+[node name="l_hard_paper" parent="." instance=ExtResource("2_uebj3")]
+transform = Transform3D(0.772054, 0.319905, 0.549174, 0.576216, 0.0122473, -0.817205, -0.268154, 0.94737, -0.174879, -0.029419, 0.203728, 0.0429409)

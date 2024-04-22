@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://uqg8lsy0c4i3"]
+
+[ext_resource type="Script" path="res://Scripts/GameRoot.gd" id="1_2phoh"]
+[ext_resource type="PackedScene" uid="uid://2dhkss66t1k0" path="res://Scenes/fade_node.tscn" id="2_nychv"]
+
+[node name="GameRoot" type="Node"]
+script = ExtResource("1_2phoh")
+scene1 = "res://Scenes/start_screen.tscn"
+scene2 = "res://Scenes/world.tscn"
+scene3 = "res://Scenes/windmill_interior.tscn"
+
+[node name="FadeNode" parent="." instance=ExtResource("2_nychv")]
+top_level = true

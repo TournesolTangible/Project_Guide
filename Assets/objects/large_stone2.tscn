@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cknheb0st6k2o"]
+
+[ext_resource type="PackedScene" uid="uid://cytpmjklypbap" path="res://Assets/models/Stones/LargeStone (2).fbx" id="1_ulxoe"]
+[ext_resource type="Texture2D" uid="uid://xja10l1hb36m" path="res://Assets/models/Stones/Texture (2).png" id="2_qhh08"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7sd8"]
+albedo_texture = ExtResource("2_qhh08")
+metallic = 0.28
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4hq1m"]
+height = 6.83243
+radius = 4.43037
+
+[node name="LargeStone (2)" instance=ExtResource("1_ulxoe")]
+
+[node name="LargeRock2" parent="RootNode" index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_u7sd8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.575584, 1.79267, -0.469264)
+shape = SubResource("CylinderShape3D_4hq1m")
