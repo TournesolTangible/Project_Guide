@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dsl2xgefydlgn" path="res://Assets/Fonts/CaveatBrush-Regular.ttf" id="2_4wbpx"]
 [ext_resource type="Script" path="res://Scripts/start_screen.gd" id="2_6hqmo"]
-[ext_resource type="FontFile" path="res://Assets/Fonts/Jersey25-Regular.ttf" id="4_aqint"]
+[ext_resource type="FontFile" uid="uid://c4evlw32mu2te" path="res://Assets/Fonts/Jersey25-Regular.ttf" id="4_aqint"]
 [ext_resource type="AudioStream" uid="uid://883q0fq2oir6" path="res://Assets/Audio/sfx/electrical_buzz.mp3" id="5_s368i"]
 [ext_resource type="AudioStream" uid="uid://ogvpr4snk6q8" path="res://Assets/Audio/sfx/projector_button_push.wav" id="6_p2s10"]
 
@@ -13,10 +13,13 @@ default_font_size = 12
 [node name="Start_Screen" type="Node3D"]
 script = ExtResource("2_6hqmo")
 
-[node name="Clock" type="Sprite2D" parent="."]
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 1152, 648)
+[node name="bluescreen" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0117647, 0.00784314, 0.988235, 1)
 
 [node name="start" type="Button" parent="."]
 anchors_preset = 3

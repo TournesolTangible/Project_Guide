@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://2dhkss66t1k0"]
+[gd_scene load_steps=10 format=3 uid="uid://2dhkss66t1k0"]
 
 [ext_resource type="Script" path="res://Scripts/fade_node.gd" id="1_ha5nj"]
 [ext_resource type="Shader" path="res://Shaders/crt.gdshader" id="2_67hpe"]
+[ext_resource type="Texture2D" uid="uid://84dk7r73nwyq" path="res://addons/Work-Clock/Godot-WORK-CLOCK incon (Small).png" id="2_m8pro"]
 
 [sub_resource type="Animation" id="Animation_f7fbk"]
 resource_name = "CRTFadeIn"
@@ -64,8 +65,8 @@ _data = {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jhgng"]
 shader = ExtResource("2_67hpe")
 shader_parameter/crt_brightness = 2.0
-shader_parameter/crt_ghost = 0.0
-shader_parameter/crt_grid = 0.0
+shader_parameter/crt_ghost = 3.0
+shader_parameter/crt_grid = 0.5
 shader_parameter/crt_white_noise = 0.3
 shader_parameter/crt_curve = 0.05
 
@@ -87,6 +88,11 @@ libraries = {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(146.287, 352)
+texture = ExtResource("2_m8pro")
+
 [node name="CRT" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_jhgng")
 anchors_preset = 15
@@ -97,6 +103,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="FadeRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
