@@ -15,7 +15,7 @@ func _ready():
 	if bubble_pitch == 0:
 		$BubblePop.pitch_scale = randf_range(0.8, 1.2)
 	else:
-		# bubble_pitch defined in inspector
+		$BubblePop.pitch_scale = bubble_pitch
 		pass
 	
 	position.y += randf_range(-0.5, 0.5)

@@ -16,22 +16,22 @@ func _process(delta: float) -> void:
 	pass
 
 func preset_for_start_screen():
-	set_brightness(3.0)
-	set_ghost(2.0)
-	set_grid(0.3)
-	set_white_noise(0.1)
+	set_brightness(2.0)
+	set_ghost(5.0)
+	set_grid(0.0)
+	set_white_noise(0.4)
 
 func preset_for_main_area():
-	set_brightness(1)
-	set_ghost(3.0)
-	set_grid(0.5)
+	set_brightness(1.8)
+	set_ghost(4.0)
+	set_grid(0.0)
 	set_white_noise(0.2)
 	
 func preset_for_windmill():
 	set_brightness(2.0)
-	set_ghost(4.0)
+	set_ghost(5.0)
 	set_grid(0.2)
-	set_white_noise(0.2)
+	set_white_noise(0.3)
 
 func play_fade_out():
 	$AnimationPlayer.play("FadeOut")

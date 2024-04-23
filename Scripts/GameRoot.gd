@@ -18,7 +18,7 @@ func _ready():
 	move_child(currentSceneInstance, 0)
 	
 	# Fade in
-	
+	$FadeNode.preset_for_start_screen()
 	$FadeNode/AnimationPlayer.play("FadeIn")
 
 func _process(delta):
@@ -32,7 +32,7 @@ func start_game():
 	
 	$FadeNode.play_fade_out()
 	await get_tree().create_timer(2.0).timeout
-	$FadeNode.preset_for_start_screen()
+	$FadeNode.preset_for_main_area()
 	
 	get_child(0).queue_free()
 	remove_child(get_child(0))

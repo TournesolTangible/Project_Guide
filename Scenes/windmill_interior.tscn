@@ -140,18 +140,18 @@ bubble_pitch = 0.2
 text_to_display = "..."
 
 [node name="bubble13" parent="Bubbles" instance=ExtResource("1_gwuli")]
-transform = Transform3D(-0.00597905, 0, -0.00801567, 0, 0.01, 0, 0.00801567, 0, -0.00597905, -59.8682, -54.1123, 0.136339)
+transform = Transform3D(-0.00597905, 0, -0.00801567, 0, 0.01, 0, 0.00801567, 0, -0.00597905, -59.2447, -53.5554, 0.136339)
 bubble_pitch = 0.1
 text_to_display = "well..."
 
 [node name="bubble14" parent="Bubbles" instance=ExtResource("1_gwuli")]
-transform = Transform3D(-0.00971271, 0, 0.00237974, 0, 0.01, 0, -0.00237974, 0, -0.00971271, -60.6884, -54.9798, -0.854698)
-bubble_pitch = 0.1
+transform = Transform3D(-0.00971271, 0, 0.00237974, 0, 0.01, 0, -0.00237974, 0, -0.00971271, -60.0649, -54.4229, -0.854698)
+bubble_pitch = 0.075
 text_to_display = "i guess this is it"
 
 [node name="bubble15" parent="Bubbles" instance=ExtResource("1_gwuli")]
-transform = Transform3D(-0.00971271, 0, 0.00237974, 0, 0.01, 0, -0.00237974, 0, -0.00971271, -61.2229, -56.2114, -0.629208)
-bubble_pitch = 0.1
+transform = Transform3D(-0.00971271, 0, 0.00237974, 0, 0.01, 0, -0.00237974, 0, -0.00971271, -60.5994, -55.6545, -0.629208)
+bubble_pitch = 0.05
 text_to_display = "here goes nothing"
 
 [node name="Stage" type="Node3D" parent="."]
