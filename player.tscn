@@ -3,19 +3,19 @@
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_fdipk"]
 [ext_resource type="PackedScene" uid="uid://by1mt2ctxrgsk" path="res://Assets/objects/r_hand.tscn" id="2_w7xoc"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jki25"]
-radius = 0.283398
-height = 1.66736
+[sub_resource type="BoxShape3D" id="BoxShape3D_8v4cn"]
+size = Vector3(0.45294, 1.67433, 0.535532)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_467ns"]
 size = Vector3(0.793962, 0.435343, 0.808184)
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
+floor_snap_length = 0.2
 script = ExtResource("1_fdipk")
 
 [node name="player_collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.786566, 0)
-shape = SubResource("CapsuleShape3D_jki25")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.857405, 0)
+shape = SubResource("BoxShape3D_8v4cn")
 
 [node name="interaction_collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28031, 0)

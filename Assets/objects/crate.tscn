@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://crh0aqn8ub8po"]
+[gd_scene load_steps=9 format=3 uid="uid://crh0aqn8ub8po"]
 
 [ext_resource type="Script" path="res://Scripts/crate.gd" id="1_kllcx"]
 [ext_resource type="Texture2D" uid="uid://b7gaxw6kv8g2p" path="res://Assets/textures/dirt_clay.png" id="1_q1ene"]
+[ext_resource type="AudioStream" uid="uid://n85uhuqhu4ge" path="res://Assets/Audio/sfx/box_hit.wav" id="3_gml2s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8id7f"]
 size = Vector3(1.10433, 1, 1.10118)
@@ -19,8 +20,9 @@ albedo_texture = ExtResource("1_q1ene")
 size = Vector3(1.28235, 1.21428, 1.29152)
 
 [node name="Crate" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.560249, 0)
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0.518069, 0)
 script = ExtResource("1_kllcx")
+mass = 0.5
 
 [node name="CrateRigidBody" type="RigidBody3D" parent="."]
 mass = 0.5
@@ -68,7 +70,11 @@ size = Vector3(0.110947, 1.36334, 0.0695961)
 [node name="AreaNode" type="Area3D" parent="."]
 
 [node name="AreaCollider" type="CollisionShape3D" parent="AreaNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00556839, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.00556839, 0)
 shape = SubResource("BoxShape3D_inptk")
 
+[node name="BoxHit" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_gml2s")
+
 [connection signal="body_entered" from="AreaNode" to="." method="_on_area_node_body_entered"]
+[connection signal="body_exited" from="AreaNode" to="." method="_on_area_node_body_exited"]

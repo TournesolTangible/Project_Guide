@@ -3,9 +3,9 @@ extends CharacterBody3D
 @onready var head = $Head
 
 @export var current_speed = 5.0
-const WALK_SPEED = 3.0
-const SPRINT_SPEED = 5.0
-const JUMP_VELOCITY = 4.0
+const WALK_SPEED = 1.0
+const SPRINT_SPEED = 3.0
+const JUMP_VELOCITY = 3.0
 
 const MOUSE_SENS = 0.1
 
@@ -96,7 +96,7 @@ func set_hand_thumb():
 
 func _on_windmill_area_body_entered(body):
 	if body.is_in_group("Player"):
-		var textnode = get_node("../Env/windmill/windmill_text")
+		#var textnode = get_node("../Env/windmill/windmill_text")
 		
 		hide_hand()
 		if get_node("../").has_key() == true:

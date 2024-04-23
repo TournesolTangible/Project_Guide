@@ -11,10 +11,10 @@ script = ExtResource("2_qwsqg")
 [node name="R_Thumb" parent="." index="0" instance=ExtResource("4_hovay")]
 transform = Transform3D(0.109284, -0.95258, -0.283986, 0.210263, -0.257079, 0.943239, -0.971518, -0.162793, 0.172198, 0, 0, 0)
 
-[node name="Thumb_light" type="OmniLight3D" parent="R_Thumb" index="1"]
+[node name="light" type="OmniLight3D" parent="R_Thumb" index="1"]
 transform = Transform3D(1, -4.47035e-08, -5.96046e-08, 1.49012e-08, 1, -1.47149e-07, 4.47035e-08, 1.80677e-07, 1, 0.144737, -0.00544058, 0.0739474)
 light_color = Color(0.713726, 0.619608, 0.419608, 1)
-light_energy = 2.0
+light_energy = 0.1
 
 [node name="R_Hard_Point1" parent="." index="1"]
 visible = false

@@ -32,8 +32,7 @@ func start_game():
 	
 	$FadeNode.play_fade_out()
 	await get_tree().create_timer(2.0).timeout
-	$FadeNode.set_static(0.0)
-	$FadeNode.set_ghost(2.0)
+	$FadeNode.preset_for_start_screen()
 	
 	get_child(0).queue_free()
 	remove_child(get_child(0))
@@ -44,11 +43,13 @@ func start_game():
 	$FadeNode.play_fade_in()
 
 func load_scene(scene : String):
-	
 	var new_scene_instance = load(scene).instantiate()
 	
 	$FadeNode.play_fade_out()
 	await get_tree().create_timer(2.0).timeout
+	
+	if scene == "res://Scenes/windmill_interior.tscn":
+		$FadeNode.preset_for_windmill()
 	
 	get_child(0).queue_free()
 	remove_child(get_child(0))

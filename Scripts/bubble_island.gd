@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var bubble_pitch : float = 1.0
+@export var bubble_pitch : float 
 @export var text_to_display : String
 @export var time = 0.0
 @export var freq = 1.0
@@ -12,8 +12,8 @@ var broken = false
 
 func _ready():
 	$text.text = text_to_display
-	if bubble_pitch == 1.0:
-		$BubblePop.pitch_scale = randf_range(0.5, 1.5)
+	if bubble_pitch == 0:
+		$BubblePop.pitch_scale = randf_range(0.8, 1.2)
 	else:
 		# bubble_pitch defined in inspector
 		pass
@@ -42,7 +42,7 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
-		get_node("../../Player").hide_hand()
+		#get_node("../../Player").hide_hand()
 		$hand.show()
 		breakable = true
 		
